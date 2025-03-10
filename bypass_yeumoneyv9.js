@@ -658,68 +658,74 @@
     _0xca8580.appendChild(_0x2591ae);
     const _0x4ddd38 = document.createElement("div");
     _0x4ddd38.className = "button-group";
-    const _0x57610d = document.createElement("button");
-    _0x57610d.textContent = "Bypass Now";
-    _0x57610d.className = "btn-bypass";
-    _0x57610d.onclick = async function _0x289eb2() {
-      try {
+const _0x57610d = document.createElement("button");
+_0x57610d.textContent = "Bypass Now";
+_0x57610d.className = "btn-bypass";
+_0x57610d.onclick = async function _0x289eb2() {
+    try {
         _0x174189.readOnly = true;
         const _0x39b747 = _0x174189.value || _0xcaa287;
         _0x174189.value = "Chờ Xíu Nhe Ní...";
         if (_0x1f8f06 && _0x3976a5) {
-          _0x174189.value = "Đang Bypass với IP: " + _0x3976a5.ip + ':' + _0x3976a5.port;
+            _0x174189.value = "Đang Bypass với IP: " + _0x3976a5.ip + ':' + _0x3976a5.port;
         }
         if (_0x5021b2) {
-          _0x174189.value += " | Browser: " + _0x6dbe9.substring(0x0, 0x14) + "...";
+            _0x174189.value += " | Browser: " + _0x6dbe9.substring(0x0, 0x14) + "...";
         }
         const _0x4615a6 = await _0x2fccce(_0x39b747);
         if (_0x4615a6) {
-          let _0x2af0fc = parseInt(_0xe545b2.value);
-          const _0x4463cb = setInterval(() => {
-            _0x174189.value = "Chờ Đợi Là Hạnh Phúc Sau: " + _0x2af0fc + "s Thôi!";
-            _0x2af0fc--;
-            if (_0x2af0fc < 0x0) {
-              clearInterval(_0x4463cb);
-              if (_0x462a9b.checked) {
-                _0x174189.value = "Code: " + _0x4615a6 + " - Đang Chuyển Trang...";
-                _0x1a47c6(_0x4615a6);
-              } else {
-                _0x174189.value = "Code: " + _0x4615a6;
-              }
-              _0x57610d.disabled = false;
-              _0x174189.readOnly = false;
+            // Kiểm tra giá trị thanh kéo, nếu < 5 thì set thành 65 giây
+            let _0x2af0fc = parseInt(_0xe545b2.value);
+            if (_0x2af0fc < 5) {
+                _0x2af0fc = 65; // Ép về 65 giây nếu nhỏ hơn 5
+                console.log("Thanh kéo < 5 giây, set thời gian bypass thành 65 giây!");
             }
-          }, 0x3e8);
+            const _0x4463cb = setInterval(() => {
+                _0x174189.value = "Chờ Đợi Là Hạnh Phúc Sau: " + _0x2af0fc + "s Thôi!";
+                _0x2af0fc--;
+                if (_0x2af0fc < 0x0) {
+                    clearInterval(_0x4463cb);
+                    if (_0x462a9b.checked) {
+                        _0x174189.value = "Code: " + _0x4615a6 + " - Đang Chuyển Trang...";
+                        _0x1a47c6(_0x4615a6);
+                    } else {
+                        _0x174189.value = "Code: " + _0x4615a6;
+                    }
+                    _0x57610d.disabled = false;
+                    _0x174189.readOnly = false;
+                }
+            }, 0x3e8);
         } else {
-          _0x174189.readOnly = false;
-          _0x174189.value = "Error! Xem Lại URL Or Đổi Nhiệm Vụ";
-          setTimeout(() => {
-            _0x174189.value = "Đang tự động đổi nhiệm vụ...";
-            const _0x2f26cc = _0x13205e();
-            if (_0x2f26cc) {
-              setTimeout(() => {
-                _0x33aed1().then(_0x1b78a7 => {
-                  _0xcaa287 = _0x1b78a7;
-                  _0x11d5d3.textContent = "OCR URL: " + _0x1b78a7;
-                  _0x174189.value = "Đã đổi nhiệm vụ, thử lại...";
-                  setTimeout(() => _0x289eb2(), 0x3e8);
-                })["catch"](() => {
-                  _0x174189.value = "Lỗi nhận diện URL mới!";
-                });
-              }, 0x7d0);
-            } else {
-              _0x174189.value = "Không thể đổi nhiệm vụ!";
-            }
-          }, 0x3e8);
+            // Xử lý lỗi...
+            _0x174189.readOnly = false;
+            _0x174189.value = "Error! Xem Lại URL Or Đổi Nhiệm Vụ";
+            setTimeout(() => {
+                _0x174189.value = "Đang tự động đổi nhiệm vụ...";
+                const _0x2f26cc = _0x13205e();
+                if (_0x2f26cc) {
+                    setTimeout(() => {
+                        _0x33aed1().then(_0x1b78a7 => {
+                            _0xcaa287 = _0x1b78a7;
+                            _0x11d5d3.textContent = "OCR URL: " + _0x1b78a7;
+                            _0x174189.value = "Đã đổi nhiệm vụ, thử lại...";
+                            setTimeout(() => _0x289eb2(), 0x3e8);
+                        })["catch"](() => {
+                            _0x174189.value = "Lỗi nhận diện URL mới!";
+                        });
+                    }, 0x7d0);
+                } else {
+                    _0x174189.value = "Không thể đổi nhiệm vụ!";
+                }
+            }, 0x3e8);
         }
         sessionStorage.removeItem("ymnclk");
         localStorage.removeItem("codexn");
-      } catch (_0x5792a5) {
+    } catch (_0x5792a5) {
         console.error("Bypass Lỗi:", _0x5792a5);
         _0x174189.value = "Lỗi không xác định!";
         _0x174189.readOnly = false;
-      }
-    };
+    }
+};
     _0x4ddd38.appendChild(_0x57610d);
     const _0x1913ac = document.createElement("button");
     _0x1913ac.textContent = "Đổi Nhiệm Vụ";
