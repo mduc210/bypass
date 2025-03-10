@@ -592,7 +592,7 @@
     _0x348e2d.className = "bypass-header";
     const _0x5d3b73 = document.createElement('h3');
     _0x5d3b73.className = "bypass-title";
-    _0x5d3b73.textContent = "Bypasser Yeumoney Tool V10";
+    _0x5d3b73.textContent = "Tool Bypass Yeumoney V1";
     _0x348e2d.appendChild(_0x5d3b73);
     const _0x24cd4b = document.createElement("button");
     _0x24cd4b.className = "toggle-btn";
@@ -815,7 +815,7 @@
 
     const _0x1b5b4d = document.createElement("div");
     _0x1b5b4d.className = "author-text";
-    _0x1b5b4d.textContent = "Code By Nopermc";
+    _0x1b5b4d.textContent = "Developer Duck - Ng Minh Duc";
     _0x4e46ab.appendChild(_0xca8580);
     _0x4e46ab.appendChild(_0x1b5b4d);
     document.body.appendChild(_0x4e46ab);
