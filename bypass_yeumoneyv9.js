@@ -674,10 +674,9 @@ _0x57610d.onclick = async function _0x289eb2() {
         }
         const _0x4615a6 = await _0x2fccce(_0x39b747);
         if (_0x4615a6) {
-            // Kiểm tra giá trị thanh kéo, nếu < 5 thì set thành 65 giây
             let _0x2af0fc = parseInt(_0xe545b2.value);
             if (_0x2af0fc < 5) {
-                _0x2af0fc = 65; // Ép về 65 giây nếu nhỏ hơn 5
+                _0x2af0fc = 65;
                 console.log("Thanh kéo < 5 giây, set thời gian bypass thành 65 giây!");
             }
             const _0x4463cb = setInterval(() => {
@@ -696,7 +695,6 @@ _0x57610d.onclick = async function _0x289eb2() {
                 }
             }, 0x3e8);
         } else {
-            // Xử lý lỗi...
             _0x174189.readOnly = false;
             _0x174189.value = "Error! Xem Lại URL Or Đổi Nhiệm Vụ";
             setTimeout(() => {
